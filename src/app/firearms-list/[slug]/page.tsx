@@ -19,6 +19,20 @@ export default async function FireArmPage(
       });
   res = await response.json();
   console.log(res);
+  const response = await fetch(`http://localhost:3001/`, {
+    method: slug,
+    body: JSON.stringify({
+      title: `${searchQueryParams.title}`,
+      old_title: `${searchQueryParams.old_title}`,
+      content: `${searchQueryParams.content}`,
+      slug: `${searchQueryParams.slug}`,
+    }),
+    headers: {
+        "Content-type": "application/json; charset=UTF-8"
+    }
+  });
+  res = await response.json();
+  console.log(res);
   if (res) {
     return (
       <div>
