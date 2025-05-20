@@ -1,10 +1,13 @@
 import Image from "next/image";
 
 export default async function FireArmPage(
-  {params}: {params: any}
+  {searchParams, params}: {searchParams: any, params: any}
 ) {
-  const {slug} = await params;
   let res;
+  const searchQueryParams = await searchParams;
+  const {slug} = await params;
+  console.log(searchQueryParams);
+  console.log(slug);
   const response = await fetch(`http://localhost:3001/pages/search/`, {
       method: "POST",
       body: JSON.stringify({
