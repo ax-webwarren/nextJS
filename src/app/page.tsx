@@ -13,7 +13,7 @@ export default async function Home(
   }
 
   return (
-    <div className="homepage">
+    <div className="homepage" style={{}}>
       <SearchComponent />
       <NewsComponent />
       {stat ? <div className='text-center p-5 text-2xl bg-amber-500 font-bold text-white'>Subscribed</div> : ''}
